@@ -24,3 +24,17 @@ class Lucky {
     return randomnum;
   }
 }
+
+class Printing {
+  Printing();
+
+  void printLine() {
+    print('============================================');
+  }
+
+  void printTitle(String customTitle) {
+    print('============================================');
+    print('============== $customTitle  ==============');
+    print('============================================');
+  }
+}
