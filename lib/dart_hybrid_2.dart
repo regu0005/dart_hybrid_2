@@ -6,8 +6,16 @@ class Lucky {
   int max = 0;
 
   Lucky() {
-    min = int.parse(Platform.environment['MIN']!);
-    max = int.parse(Platform.environment['MAX']!);
+    if (Platform.environment.containsKey('MIN') &&
+        Platform.environment.containsKey('MAX')) {
+      min = int.parse(Platform.environment['MIN']!);
+      max = int.parse(Platform.environment['MAX']!);
+    } else {
+      min = 1;
+      max = 10;
+      print(
+          "Environment variables doesn't exist.\nUsing default values min=1,max=10");
+    }
 
     // Validate if the values min and max are correct, maximum and minimun values
     // if they are not correct, we swap the values as the result wanted is a value
